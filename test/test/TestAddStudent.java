@@ -14,7 +14,7 @@ public class TestAddStudent {
     private StudentValidator studentValidator = new StudentValidator();
 
     @Test
-    public void testCorrectStudent() {
+    public void testValidStudent() {
         List<Student> studentList = new LinkedList<>();
 
         String id = "1";
