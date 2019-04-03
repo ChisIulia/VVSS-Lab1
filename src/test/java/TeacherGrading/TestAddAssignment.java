@@ -38,6 +38,33 @@ public class TestAddAssignment {
         assertEquals(1, temaLabXMLRepo.getSize() - initialSize);
     }
 
+    @Test
+    public void testDuplicateAssignment() {
+        int initialSize = temaLabXMLRepo.getSize();
+
+        int id = 100;
+        String descriere = "ceva";
+        int termenLimita = 2;
+        int saptamanaPredarii = 2;
+
+        TemaLab temaLab = new TemaLab(id, descriere, termenLimita, saptamanaPredarii);
+        try {
+            temaLabXMLRepo.save(temaLab);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+
+        int afterAddingSize = temaLabXMLRepo.getSize();
+
+        try {
+            temaLabXMLRepo.save(temaLab);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+
+        assertEquals(afterAddingSize, temaLabXMLRepo.getSize());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testNullAssignment() throws ValidatorException {
         TemaLab temaLab = null;
