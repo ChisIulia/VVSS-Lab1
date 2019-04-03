@@ -18,6 +18,7 @@ public abstract class AbstractXMLService<ID,E extends HasId<ID>> {
         E e=extractEntity(params);
         xmlrepo.save(e);
     }
+
     public void remove(ID id){
         xmlrepo.delete(id);
     }
