@@ -79,10 +79,14 @@ public abstract class AbstractXMLRepo<ID, E extends HasId<ID>> extends AbstractC
 
     @Override
     public E save(E e) throws ValidatorException {
+        // 1
         E stuff = super.save(e);
+        //2
         if (stuff == null) {
+            // 3
             writeAll();
         }
+        // 4
         return stuff;
     }
 

@@ -32,13 +32,18 @@ public abstract class AbstractCrudRepo<ID,E extends HasId<ID>> implements Repo<I
     }
     @Override
     public E save(E entity) throws ValidatorException {
+        // 5
         if(entity==null){
+            // 6
             throw new IllegalArgumentException("Entity can not be null!\n");
         }
+        // 7
         try{
+            // 8
             validator.validate(entity);
             return entityes.putIfAbsent(entity.getId(),entity);
         }catch(ValidatorException ex){
+            // 9
             throw new ValidatorException(ex.getMessage());
         }
     }
