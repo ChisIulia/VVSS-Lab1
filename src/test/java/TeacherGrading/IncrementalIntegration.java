@@ -38,7 +38,7 @@ public class IncrementalIntegration {
     }
 
     @Test
-    public void testValidStudent() {
+    public void testAddStudent() {
         int initialSize = studentXMLRepo.getSize();
 
         String id = "11";

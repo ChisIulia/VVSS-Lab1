@@ -38,7 +38,7 @@ public class BigBangIntegration {
     }
 
     @Test
-    public void testValidAssignment() {
+    public void testAddAssignment() {
         int initialSize = temaLabXMLRepo.getSize();
 
         int id = 100;
@@ -57,7 +57,7 @@ public class BigBangIntegration {
     }
 
     @Test
-    public void testValidStudent() {
+    public void testAddStudent() {
         int initialSize = studentXMLRepo.getSize();
 
         String id = "11";
@@ -77,7 +77,7 @@ public class BigBangIntegration {
     }
 
     @Test
-    public void testValidGrade() {
+    public void testAddGrade() {
         int initialSize = notaXMLRepo.getSize();
 
         String id = "11";
